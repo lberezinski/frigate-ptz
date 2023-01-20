@@ -35,6 +35,7 @@ from frigate.config import FrigateConfig
 from frigate.const import CLIPS_DIR, MAX_SEGMENT_DURATION, RECORD_DIR
 from frigate.models import Event, Recordings
 from frigate.object_processing import TrackedObject
+from frigate.plus import PlusApi
 from frigate.ptz import OnvifController
 from frigate.stats import stats_snapshot
 from frigate.util import (
@@ -59,7 +60,7 @@ def create_app(
     detected_frames_processor,
     storage_maintainer: StorageMaintainer,
     onvif: OnvifController,
-    plus_api,
+    plus_api: PlusApi,
 ):
     app = Flask(__name__)
 
